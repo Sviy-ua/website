@@ -1,0 +1,26 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  title: string;
+  description: string;
+  className?: string;
+}
+
+const { title, description, className } = Astro.props;
+---
+
+<div
+  class={twMerge(
+    "flex flex-col gap-1 md:flex-row items-baseline md:gap-4",
+    className
+  )}
+>
+  <span
+    class="font-bold text-[80px] sm:text-[100px] md:text-[120px] lg:text-[140px] leading-none"
+    >{title}</span
+  >
+  <div>
+    <div class="uppercase text-lg text-balance inline-block">{description}</div>
+  </div>
+</div>

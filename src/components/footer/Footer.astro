@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import FooterContact from "./FooterContact.astro";
+import FooterSocialIcon from "./FooterSocialIcon.astro";
+---
+
+<footer class="px-5 py-[60px] bg-yellow md:px-20">
+  <a href="/"><Icon name="logo" class="w-[200px] h-[54px]" title="Logo" /></a>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+    <div class="flex flex-col gap-8 md:order-2">
+      <FooterContact title="Адреса ЖК">
+        <p>м. Дубно,</p>
+        <p>вул. Станіслава Морозенка, 31 А</p>
+      </FooterContact>
+      <FooterContact title="Адреса відділу продаж">
+        м. Дубно, вул. Сурмичі, 12
+      </FooterContact>
+      <FooterContact title="Телефон">
+        <a href="tel:0800301036">0 (800) 30 10 36</a>
+      </FooterContact>
+      <FooterContact title="Пошта">
+        <a href="mailto:managers@sviydubno.com.ua">managers@sviydubno.com.ua</a>
+      </FooterContact>
+    </div>
+    <div class="flex flex-col gap-6 md:gap-16 md:justify-end">
+      <div>
+        <p>Напишіть нам</p>
+        <div class="flex flex-row gap-3 mt-2">
+          <FooterSocialIcon icon="socials/telegram" href="/" title="Telegram" />
+          <FooterSocialIcon
+            icon="socials/messenger"
+            href="/"
+            title="Messenger"
+          />
+          <FooterSocialIcon
+            icon="socials/instagram"
+            href="/"
+            title="Instagram"
+          />
+        </div>
+      </div>
+      <div>
+        <p>Ми в соцмережах</p>
+        <div class="flex flex-row gap-3 mt-2">
+          <FooterSocialIcon
+            icon="socials/instagram"
+            href="/"
+            title="Instagram"
+          />
+          <FooterSocialIcon icon="socials/facebook" href="/" title="Facebook" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

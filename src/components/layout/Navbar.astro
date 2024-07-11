@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import Menu from "./Menu.astro";
+---
+
+<header
+  class="h-[120px] flex flex-row items-center justify-between bg-cadmium px-[60px] py-4"
+>
+  <div class="flex flex-col items-center gap-2">
+    <Image
+      src="/logo.svg"
+      width={250}
+      height={66}
+      alt="logo"
+      loading="eager"
+      class="text-black"
+    />
+    <span class="uppercase">житловий комплекс</span>
+  </div>
+  <Menu />
+  <div class="flex flex-col">
+    <span class="text-lg">передзвоніть мені</span>
+    <a href="tel:080000000" class="font-semibold text-3xl">0-800-00-000</a>
+  </div>
+</header>

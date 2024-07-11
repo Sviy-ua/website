@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Fixel";
+  src: url("/fonts/fixel.ttf") format("truetype");
+}
+
+* {
+  font-family: "Fixel";
+  @apply duration-300 transition-all text-balance;
+}
+
+body {
+  background-color: #f2ddbb;
+  color: #2a2a2a;
+}
+
+h2 {
+  @apply uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
