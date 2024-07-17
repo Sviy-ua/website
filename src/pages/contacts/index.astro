@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import ContactItem from "@/components/contacts/ContactItem.astro";
+import FooterSocialIcon from "@/components/footer/FooterSocialIcon.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout
+  title="Контакти"
+  className="px-6 py-12 bg-yellow space-y-12"
+  disableFooter
+>
+  <div class="flex felx-row gap-4">
+    <h2
+      class="text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-normal flex-1"
+    >
+      Контакти
+    </h2>
+    <Icon name="logo" width={200} height={45} class="hidden md:block" />
+  </div>
+  <div class="flex flex-wrap gap-4 min-w-[250px]">
+    <div class="flex-1">
+      <Image
+        src="/map.png"
+        width={512}
+        height={512}
+        alt="map"
+        class="mx-auto min-w-[250px]"
+      />
+    </div>
+    <div class="flex-1 flex flex-col gap-12 min-w-[250px]">
+      <ContactItem title="Адреса ЖК">
+        м. Дубно, вул. Станіслава Морозенка, 31 А
+      </ContactItem>
+      <ContactItem title="Адреса відділу продаж">
+        м. Дубно, вул. Сурмичі, 12
+      </ContactItem>
+      <ContactItem title="Графік роботи ВП">
+        Пн- Пт - 10:00 до 18:00
+      </ContactItem>
+    </div>
+    <div class="flex-1 flex flex-col gap-12 min-w-[250px]">
+      <ContactItem title="Телефон"> 0 (800) 30 10 36 </ContactItem>
+      <ContactItem title="Пошта"> sviy_dubno@gmail.com </ContactItem>
+      <ContactItem title="Ми в соцмережах" className="flex flex-row gap-2">
+        <FooterSocialIcon icon="socials/instagram" href="/" title="Instagram" />
+        <FooterSocialIcon icon="socials/facebook" href="/" title="Facebook" />
+      </ContactItem>
+    </div>
+  </div>
+</Layout>

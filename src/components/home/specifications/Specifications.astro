@@ -1,0 +1,28 @@
+---
+import specifications from "@/data/specifications";
+import map from "lodash/map";
+import SpecificationInfoItem from "./SpecificationInfoItem.astro";
+import SpecificationItem from "./SpecificationItem.astro";
+---
+
+<section
+  id="specification"
+  class="default-container bg-[rgb(243,142,50)] bg-[linear-gradient(180deg,_rgba(243,142,50,1)_0%,_rgba(245,222,188,1)_50%,_rgba(245,222,188,1)_100%)] remove-all-margin pt-16 space-y-12"
+>
+  <h2 class="md:text-[75px] lg:text-[100px] md:text-center duration-300 mb-12">
+    ТЕХНІЧНІ ХАРАКТЕРИСТИКИ
+  </h2>
+  <div>
+    <p>Клас нерухомості</p>
+    <p class="text-2xl md:text-3xl uppercase font-medium">COMFORT PLUS</p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
+    <SpecificationInfoItem title="1" description="Кількість будинків" />
+    <SpecificationInfoItem title="2" description="Кількість секцій" />
+    <SpecificationInfoItem title="9" description="Поверховість" />
+    <SpecificationInfoItem title="96" description="Кількість квартир" />
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-9">
+    {map(specifications, (item) => <SpecificationItem {...item} />)}
+  </div>
+</section>

@@ -1,30 +1,64 @@
 ---
 import "@/styles/global.css";
+
 import Footer from "@/components/footer/Footer.astro";
+import Navbar from "@/components/navbar/Navbar.astro";
+import { SEO } from "astro-seo";
+import { Schema } from "astro-seo-schema";
 import { twMerge } from "tailwind-merge";
 
 interface Props {
   title: string;
   className?: string;
+  disableFooter?: boolean;
 }
 
-const { title, className } = Astro.props;
+const { title, className, disableFooter } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- SEO -->
+    <SEO
+      title={title}
+      titleTemplate="%s | Sviy"
+      description=""
+      charset="utf-8"
+      openGraph={{
+        basic: {
+          title: "Sviy",
+          type: "website",
+          image: "",
+        },
+      }}
+      twitter={{
+        title: "Sviy",
+        image: "",
+        description: "",
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [],
+      }}
+    />
+
+    <!-- Schema.org markup-->
+    <Schema
+      item={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Sviy",
+        url: "https://sviydubno.com.ua/",
+      }}
+    />
   </head>
   <body class="flex flex-col min-h-dvh">
-    <!-- <Navbar /> -->
+    <Navbar />
     <main class={twMerge("flex-1", className)}><slot /></main>
-    <Footer />
+    {!disableFooter && <Footer />}
   </body>
 </html>

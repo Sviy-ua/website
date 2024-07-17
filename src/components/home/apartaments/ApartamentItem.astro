@@ -1,0 +1,49 @@
+---
+import { Image } from "astro:assets";
+import type { Apartament } from "@/data/apartaments";
+import getPlurals from "@/utils/plurals";
+
+interface Props {
+  data: Apartament;
+}
+
+const { data } = Astro.props;
+---
+
+<div
+  class="flex flex-col embla__slide embla__slide__apartament embla__slide__margin"
+>
+  <p>
+    {
+      `${data.roomsCount} ${getPlurals(data.roomsCount, "room")} | ${data.section} секція`
+    }
+  </p>
+  <div class="flex flex-col border border-black">
+    <div class="flex flex-row border-black border-b">
+      <div class="flex-1 px-3 py-2">
+        <p class="uppercase">Квартири</p>
+        <p class="font-medium text-xl md:text-3xl text-nowrap">{data.rooms}</p>
+      </div>
+      <div class="h-full w-[1px] bg-black"></div>
+      <div class="flex-1 px-3 py-2">
+        <p class="uppercase">Загальна площа</p>
+        <p class="font-medium text-xl md:text-3xl text-nowrap">
+          {data.area} m²
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-4 p-12 pb-6 relative">
+      <Image
+        src={`/apartaments/${data.id}.png`}
+        width={408}
+        height={562}
+        alt={data.id}
+        loading="eager"
+        class="h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] duration-300 object-contain"
+      />
+      <a href="/" class="bg-orange px-3 py-1 font-medium uppercase">
+        Переглянути
+      </a>
+    </div>
+  </div>
+</div>

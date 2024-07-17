@@ -1,0 +1,92 @@
+---
+import "@/styles/embla.css";
+import { Image } from "astro:assets";
+import EmblaCarousel from "embla-carousel";
+import Autoplay from "embla-carousel-autoplay";
+import map from "lodash/map";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+const gallery = [
+  "/gallery/1.jpg",
+  "/gallery/2.jpg",
+  "/gallery/3.jpg",
+  "/gallery/4.jpg",
+  "/gallery/5.jpg",
+  "/gallery/6.jpg",
+  "/gallery/7.jpg",
+  "/gallery/8.jpg",
+  "/gallery/9.jpg",
+  "/gallery/10.jpg",
+  "/gallery/11.jpg",
+  "/gallery/12.jpg",
+  "/gallery/13.jpg",
+];
+---
+
+<section id="gallery" class="default-container remove-all-x-padding">
+  <div class="embla relative">
+    <div class="embla__container">
+      {
+        map(gallery, (item) => (
+          <div class="embla__slide h-[800px]">
+            <Image
+              src={item}
+              loading="eager"
+              class="object-cover h-[800px] w-full"
+              alt="gallery"
+              width={1920}
+              height={1080}
+            />
+          </div>
+        ))
+      }
+    </div>
+    <div class="w-full absolute top-0 inset-x-0 h-[4px]">
+      <div class="bg-yellow h-full duration-1000 ease-in-out" id="progress">
+      </div>
+    </div>
+    <ArrowLeft
+      id="slide-prev"
+      className="absolute top-1/2 -translate-y-1/2 left-8 text-orange cursor-pointer"
+      size={48}
+    />
+    <ArrowRight
+      id="slide-next"
+      className="absolute top-1/2 -translate-y-1/2 right-8 text-orange cursor-pointer"
+      size={48}
+    />
+  </div>
+</section>
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import Autoplay from "embla-carousel-autoplay";
+
+  const emblaNode = document.querySelector("#gallery .embla") as HTMLElement;
+  const options = { loop: true };
+  const plugins = [Autoplay({ delay: 3000 })];
+
+  const emblaApi = EmblaCarousel(emblaNode, options, plugins);
+
+  const prevButton = document.querySelector(
+    "#gallery #slide-prev"
+  ) as HTMLElement;
+  const nextButton = document.querySelector(
+    "#gallery #slide-next"
+  ) as HTMLElement;
+
+  prevButton.addEventListener("click", () => emblaApi.scrollPrev());
+  nextButton.addEventListener("click", () => emblaApi.scrollNext());
+
+  const progressNode = document.querySelector(
+    "#gallery #progress"
+  ) as HTMLElement;
+
+  emblaApi.on("select", () => {
+    const total = emblaApi.scrollSnapList().length;
+    const selected = emblaApi.selectedScrollSnap();
+
+    const progressPercentage = (selected / (total - 1)) * 100;
+    progressNode.style.width = `${progressPercentage}%`;
+  });
+</script>

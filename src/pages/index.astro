@@ -1,11 +1,14 @@
 ---
-import About from "@/components/home/About.astro";
 import Hero from "@/components/home/Hero.astro";
+import About from "@/components/home/about/About.astro";
 import Advantage from "@/components/home/advantage/Advantage.astro";
+import Apartaments from "@/components/home/apartaments/Apartaments.astro";
 import Concept from "@/components/home/concept/Concept.astro";
-import ContactUsAlt from "@/components/home/contact/ContactUsAlt.astro";
-import ContactUsMain from "@/components/home/contact/ContactUsMain.astro";
-import ContactUsSecondary from "@/components/home/contact/ContactUsSecondary.astro";
+import ContactUs from "@/components/home/contact/ContactUs.astro";
+import Design from "@/components/home/design/Design.astro";
+import Gallery from "@/components/home/gallery/Gallery.astro";
+import Location from "@/components/home/location/Location.astro";
+import Specifications from "@/components/home/specifications/Specifications.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -13,8 +16,25 @@ import Layout from "@/layouts/Layout.astro";
   <Hero />
   <Concept />
   <About />
-  <ContactUsMain />
+  <Gallery />
+  <ContactUs
+    id="contact-individual"
+    title="Запишись на індивідуальну консультацію"
+    buttonText="записатися"
+  />
   <Advantage />
-  <ContactUsSecondary />
-  <ContactUsAlt />
+  <Apartaments />
+  <Design />
+  <ContactUs
+    id="get-free-plans"
+    title="ОТРИМАЙ ПІДБІРКУ ВІЛЬНИХ ПЛАНУВАНЬ"
+    buttonText="Отримати"
+  />
+  <Specifications />
+  <Location />
+  <ContactUs
+    id="get-free-consultation"
+    title="Зателефонуємо, проконсультуємо, підберемо найкращі варіанти"
+    buttonText="зателефонуйте мені"
+  />
 </Layout>

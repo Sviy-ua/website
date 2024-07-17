@@ -1,0 +1,46 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_3395_5396)">
+        <path d="M59.9995 58.9987H0" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        <path d="M50.9001 3.63257H48.3472V6.26483H50.9001V3.63257Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+        <path d="M50.9001 3.63257H48.3472V6.26483H50.9001V3.63257Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+        <path d="M11.6415 46.7405H9.08862V49.3727H11.6415V46.7405Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+        <mask id="mask0_3395_5396" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="11" y="1" width="13"
+            height="52">
+            <path d="M23.8894 1H11.6541V52.0049H23.8894V1Z" fill="white" />
+        </mask>
+        <g mask="url(#mask0_3395_5396)">
+            <path d="M19.8539 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+            <path d="M15.6738 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        </g>
+        <path d="M23.8765 1H11.6411V52.0049H23.8765V1Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+        <mask id="mask1_3395_5396" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="23" y="1" width="14"
+            height="52">
+            <path d="M36.1263 1H23.891V52.0049H36.1263V1Z" fill="white" />
+        </mask>
+        <g mask="url(#mask1_3395_5396)">
+            <path d="M32.0894 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+            <path d="M27.9093 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        </g>
+        <path d="M36.1118 1H23.8765V52.0049H36.1118V1Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+        <mask id="mask2_3395_5396" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="36" y="1" width="13"
+            height="52">
+            <path d="M48.3601 1H36.1248V52.0049H48.3601V1Z" fill="white" />
+        </mask>
+        <g mask="url(#mask2_3395_5396)">
+            <path d="M44.3246 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+            <path d="M40.1445 0.973755V51.9787" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        </g>
+        <path d="M48.3472 1H36.1118V52.0049H48.3472V1Z" stroke="currentColor" stroke-width="0.75"
+            stroke-miterlimit="10" />
+    </g>
+    <defs>
+        <clipPath id="clip0_3395_5396">
+            <rect width="60" height="60" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

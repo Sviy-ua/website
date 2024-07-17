@@ -5,14 +5,38 @@
 
 * {
   font-family: "Fixel";
-  @apply duration-300 transition-all text-balance;
+  @apply text-balance;
 }
 
 body {
   background-color: #f2ddbb;
-  color: #2a2a2a;
+  color: currentColor;
 }
 
 h2 {
   @apply uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+}
+
+.default-container {
+  @apply mt-[60px] px-5 sm:mt-[80px] sm:px-8 md:mt-[100px] md:px-12 lg:mt-[120px] lg:px-16;
+}
+
+.remove-all-x-padding {
+  @apply px-0 sm:px-0 md:px-0 lg:px-0 xl:px-0 2xl:px-0;
+}
+
+.remove-all-y-padding {
+  @apply py-0 sm:py-0 md:py-0 lg:py-0 xl:py-0 2xl:py-0;
+}
+
+.remove-all-margin {
+  @apply m-0 sm:m-0 md:m-0 lg:m-0 xl:m-0 2xl:m-0;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.ReactCollapse--content {
+  @apply space-y-3;
 }

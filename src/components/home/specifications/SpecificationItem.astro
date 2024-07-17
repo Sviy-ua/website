@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+import map from "lodash/map";
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string[];
+}
+const { icon, title, description } = Astro.props;
+---
+
+<div class="flex flex-row gap-4">
+  <Icon name={icon} class="size-12" />
+  <div class="flex-1">
+    <p class="text-lg md:text-xl uppercase">{title}</p>
+    <div class="ml-2">
+      {map(description, (item) => <p class="text-balance">{item}</p>)}
+    </div>
+  </div>
+</div>

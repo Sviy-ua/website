@@ -17,10 +17,10 @@ const { title, description, className } = Astro.props;
   )}
 >
   <span
-    class="font-bold text-[80px] sm:text-[100px] md:text-[120px] lg:text-[140px] leading-none"
+    class="font-bold text-[80px] sm:text-[100px] md:text-[120px] lg:text-[150px] 2xl:text-[200px] leading-none"
     >{title}</span
   >
-  <div>
+  <div class="max-w-[350px]">
     <div class="uppercase text-lg text-balance inline-block">{description}</div>
   </div>
 </div>

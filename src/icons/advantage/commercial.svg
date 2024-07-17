@@ -1,0 +1,25 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_3395_5401)">
+        <path d="M8.71863 9.53223H55.3559L53.4772 31.7991H13.7859" stroke="currentColor" stroke-width="0.75" />
+        <path d="M10.4258 16.9531H54.7081" stroke="currentColor" stroke-width="0.75" />
+        <path d="M12.1061 24.3779H54.073" stroke="currentColor" stroke-width="0.75" />
+        <path d="M33.6577 9.53223V31.7991" stroke="currentColor" stroke-width="0.75" />
+        <path d="M26.2367 9.53223V31.7991" stroke="currentColor" stroke-width="0.75" />
+        <path d="M18.8138 9.53223V31.7991" stroke="currentColor" stroke-width="0.75" />
+        <path d="M48.5035 9.53223V31.7991" stroke="currentColor" stroke-width="0.75" />
+        <path d="M41.0806 9.53223V31.7991" stroke="currentColor" stroke-width="0.75" />
+        <path d="M0 59.0621H60" stroke="currentColor" stroke-width="0.75" />
+        <path d="M0 1L7.36936 3.64609L15.8634 40.5987L51.6781 42.7024" stroke="currentColor" stroke-width="0.75" />
+        <path
+            d="M15.5343 48.0468C17.0103 48.0468 18.2068 46.8502 18.2068 45.3742C18.2068 43.8982 17.0103 42.7017 15.5343 42.7017C14.0583 42.7017 12.8617 43.8982 12.8617 45.3742C12.8617 46.8502 14.0583 48.0468 15.5343 48.0468Z"
+            stroke="currentColor" stroke-width="0.75" />
+        <path
+            d="M51.6644 48.0468C53.1404 48.0468 54.337 46.8502 54.337 45.3742C54.337 43.8982 53.1404 42.7017 51.6644 42.7017C50.1884 42.7017 48.9918 43.8982 48.9918 45.3742C48.9918 46.8502 50.1884 48.0468 51.6644 48.0468Z"
+            stroke="currentColor" stroke-width="0.75" />
+    </g>
+    <defs>
+        <clipPath id="clip0_3395_5401">
+            <rect width="60" height="60" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

@@ -1,0 +1,36 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M46.36 46.3604H1" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    <path d="M39.4801 2.99023H37.55V4.98024H39.4801V2.99023Z" stroke="currentColor" stroke-width="0.75"
+        stroke-miterlimit="10" />
+    <path d="M39.4801 2.99023H37.55V4.98024H39.4801V2.99023Z" stroke="currentColor" stroke-width="0.75"
+        stroke-miterlimit="10" />
+    <path d="M9.80011 35.5801H7.87012V37.5701H9.80011V35.5801Z" stroke="currentColor" stroke-width="0.75"
+        stroke-miterlimit="10" />
+    <mask id="mask0_3403_5673" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="9" y="1" width="11"
+        height="39">
+        <path d="M19.0601 1H9.81006V39.56H19.0601V1Z" fill="white" />
+    </mask>
+    <g mask="url(#mask0_3403_5673)">
+        <path d="M16.0101 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        <path d="M12.8501 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    </g>
+    <path d="M19.05 1H9.80005V39.56H19.05V1Z" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    <mask id="mask1_3403_5673" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="19" y="1" width="10"
+        height="39">
+        <path d="M28.3101 1H19.0601V39.56H28.3101V1Z" fill="white" />
+    </mask>
+    <g mask="url(#mask1_3403_5673)">
+        <path d="M25.2601 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        <path d="M22.1001 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    </g>
+    <path d="M28.3 1H19.05V39.56H28.3V1Z" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    <mask id="mask2_3403_5673" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="28" y="1" width="10"
+        height="39">
+        <path d="M37.5601 1H28.3101V39.56H37.5601V1Z" fill="white" />
+    </mask>
+    <g mask="url(#mask2_3403_5673)">
+        <path d="M34.5101 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+        <path d="M31.3501 0.980469V39.5405" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+    </g>
+    <path d="M37.55 1H28.3V39.56H37.55V1Z" stroke="currentColor" stroke-width="0.75" stroke-miterlimit="10" />
+</svg>

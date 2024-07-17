@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import locations from "@/data/locations";
+import { Icon } from "astro-icon/components";
+import map from "lodash/map";
+import LocationTable from "./LocationTable.astro";
+---
+
+<section id="location-map" class="default-container bg-orange pt-16 space-y-12">
+  <h2>Локація</h2>
+  <div class="flex flex-row gap-4 items-center">
+    <div
+      class="flex flex-col gap-3 max-w-[512px] md:max-w-none flex-1 items-center"
+    >
+      <Image src="/map.png" width={512} height={512} alt="map" />
+      <p class="text-lg text-balance text-center md:hidden">
+        м. Дубно, вул. Станіслава Морозенка, 31 А
+      </p>
+    </div>
+    <div class="hidden md:flex flex-1 flex-col items-center gap-2">
+      <Icon
+        name="figures/heart"
+        class="text-yellow fill-yellow h-full size-[240px] lg:size-[320px] xl:size-[400px] duration-300"
+      />
+      <p class="text-2xl text-balance text-center">
+        м. Дубно, вул. Станіслава Морозенка, 31 А
+      </p>
+    </div>
+  </div>
+</section>
+<section
+  id="location"
+  class="default-container bg-[rgb(243,142,50)] bg-[linear-gradient(180deg,_rgba(243,142,50,1)_0%,_rgba(245,222,188,1)_50%,_rgba(245,222,188,1)_100%)] remove-all-margin py-16"
+>
+  <h2 class="font-normal text-2xl sm:text-3xl md:text-4xl max-w-[400px]">
+    ЖК SVIY - ДЕ ВСЕ, ЩО ПОТРІБНО - ПОРУЧ
+  </h2>
+  <div class="columns-1 md:columns-2 mt-6">
+    {map(locations, (item) => <LocationTable data={item} />)}
+  </div>
+</section>
