@@ -6,25 +6,29 @@ import NavbarMobile from "./NavbarMobile";
 
 const menu: MenuItem[] = [
   {
+    id: "home",
     title: "Про SVIY",
     href: "/",
     children: [
-      { title: "Переваги", href: "/#advantages" },
-      { title: "Планування", href: "/#apartaments" },
-      { title: "Генплан", href: "/#genplan" },
-      { title: "Локація", href: "/#location" },
-      { title: "Тех.характеристики", href: "/#tech" },
+      { id: "advantages", title: "Переваги", href: "/#advantages" },
+      { id: "apartaments", title: "Планування", href: "/#apartaments" },
+      { id: "genplan", title: "Генплан", href: "/#genplan" },
+      { id: "location", title: "Локація", href: "/#location" },
+      { id: "tech", title: "Тех.характеристики", href: "/#tech" },
     ],
   },
   {
+    id: "apartaments",
     title: "Квартири",
     href: "/apartaments",
   },
   {
+    id: "buildings",
     title: "Будівництво",
     href: "/buildings",
   },
   {
+    id: "contacts",
     title: "Контакти",
     href: "/contacts",
   },

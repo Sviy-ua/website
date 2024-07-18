@@ -20,7 +20,7 @@ export default function NavbarDesktop({ items }: IProps) {
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
         {map(items, (item) => (
-          <NavigationMenuItem key={item.href}>
+          <NavigationMenuItem key={item.id}>
             {item.children ? (
               <>
                 <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
@@ -29,7 +29,7 @@ export default function NavbarDesktop({ items }: IProps) {
                     <NavigationMenuLink
                       className={twMerge(navigationMenuTriggerStyle(), "w-full hover:bg-orange-hover")}
                       href={child.href}
-                      key={child.href}
+                      key={child.id}
                     >
                       {child.title}
                     </NavigationMenuLink>

@@ -22,18 +22,18 @@ export default function NavbarMobile({ items, children }: IProps) {
             {map(items, (item) => {
               if (!item.children)
                 return (
-                  <a key={item.href} className="text-4xl" href={item.href}>
+                  <a key={item.id} className="text-4xl" href={item.href}>
                     {item.title}
                   </a>
                 );
               return (
-                <AccordionItem className="border-none" value="main" key={item.href}>
+                <AccordionItem className="border-none" value="main" key={item.id}>
                   <AccordionTrigger className="p-0 text-left font-normal text-4xl hover:no-underline">
                     {item.title}
                   </AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-2 pt-2 pl-4">
                     {map(item.children, (child) => (
-                      <a key={child.href} className="text-xl" href={child.href}>
+                      <a key={child.id} className="text-xl" href={child.href}>
                         {child.title}
                       </a>
                     ))}
