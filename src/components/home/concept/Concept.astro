@@ -2,7 +2,7 @@
 import ConceptItem from "./ConceptItem.astro";
 ---
 
-<section id="concept" class="default-container">
+<section id="concept" class="default-container" data-aos="fade-down">
   <h2 class="uppercase">КОНЦЕПЦІЯ</h2>
   <div
     class="grid grid-cols-1 md:grid-cols-2 px-10 sm:px-14 md:px-20 lg:px-24 mt-10 sm:mt-14 md:mt-20 lg:mt-24 gap-7 sm:gap-10 md:gap-14 lg:gap-20"
@@ -11,21 +11,25 @@ import ConceptItem from "./ConceptItem.astro";
       title="5"
       description="хвилин від центру міста"
       className="order-1"
+      index={0}
     />
     <ConceptItem
       title="9"
       description="поверхів"
       className="order-2 md:order-3"
+      index={1}
     />
     <ConceptItem
       title="96"
       description="1-2 кімнатних квартир з вільним плануванням"
       className="order-3 md:order-2"
+      index={2}
     />
     <ConceptItem
       title="24"
       description="УНІКАЛЬНІ ПЛАНУВАННЯ ВІД 40 М2 ДО 70 М2"
       className="order-4"
+      index={3}
     />
   </div>
 </section>

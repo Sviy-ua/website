@@ -28,7 +28,14 @@ export default function ContactForm({ formId, buttonText }: IProps) {
   return (
     <form className="flex w-full max-w-xl flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <input placeholder="Ім'я" className="w-full bg-orange-hover px-3 py-2" id="name" {...register("name")} />
+        <input
+          placeholder="Ім'я"
+          className="aos-init w-full bg-orange-hover px-3 py-2"
+          id="name"
+          {...register("name")}
+          data-aos="fade-right"
+          data-aos-delay="150"
+        />
         {errors.name && <p className="mt-1 text-red-700 text-sm">{errors.name.message}</p>}
       </div>
       <div>
@@ -36,21 +43,30 @@ export default function ContactForm({ formId, buttonText }: IProps) {
           mask="+38 (0__) ___-____"
           replacement={{ _: /\d/ }}
           placeholder="+38 (0__) ___-____"
-          className="w-full bg-orange-hover px-3 py-2"
+          className="aos-init w-full bg-orange-hover px-3 py-2"
           id="phone"
           {...register("phone")}
+          data-aos="fade-right"
+          data-aos-delay="200"
         />
         {errors.phone && <p className="mt-1 text-red-700 text-sm">{errors.phone.message}</p>}
       </div>
       <div>
         <textarea
           placeholder="Коментар"
-          className="min-h-[150px] w-full bg-orange-hover px-3 py-2 duration-0"
+          className="aos-init min-h-[150px] w-full bg-orange-hover px-3 py-2 duration-0"
           {...register("comment")}
+          data-aos="fade-right"
+          data-aos-delay="250"
         />
         {errors.comment && <p className="mt-1 text-red-700 text-sm">{errors.comment.message}</p>}
       </div>
-      <button type="submit" className="bg-yellow px-3 py-2 font-medium text-xl uppercase">
+      <button
+        type="submit"
+        className="bg-yellow px-3 py-2 font-medium text-xl uppercase"
+        data-aos="fade-right"
+        data-aos-delay="300"
+      >
         {buttonText}
       </button>
     </form>

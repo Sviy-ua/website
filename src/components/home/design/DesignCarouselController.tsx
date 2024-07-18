@@ -22,7 +22,7 @@ export default function DesignCarouselController() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-center gap-3">
-        {map(designs, (item) => (
+        {map(designs, (item, index) => (
           <button
             type="button"
             key={item.id}
@@ -31,12 +31,14 @@ export default function DesignCarouselController() {
               "flex-1 text-nowrap border border-black px-3 py-2 font-medium text-xl duration-300 ease-in-out hover:bg-orange-hover",
               selected === item.id && "bg-orange",
             )}
+            data-aos="fade-up"
+            data-aos-delay={50 * index}
           >
             {item.title}
           </button>
         ))}
       </div>
-      <div className="relative pt-6">
+      <div className="relative pt-6" data-aos="fade-up" data-aos-delay="150">
         <div className="embla" ref={emblaRef}>
           <DesignCarouselContainer selected={selectedDesign} />
         </div>

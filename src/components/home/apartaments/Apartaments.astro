@@ -10,13 +10,24 @@ import ApartamentItem from "./ApartamentItem.astro";
   id="apartaments"
   class="bg-[rgb(216,207,55)] bg-[linear-gradient(180deg,_rgba(216,207,55,1)_0%,_rgba(245,222,188,1)_50%,_rgba(245,222,188,1)_100%)] pt-48 default-container remove-all-margin"
 >
-  <h2 class="md:text-[100px] lg:text-[150px] md:text-center duration-300 mb-12">
+  <h2
+    class="md:text-[100px] lg:text-[150px] md:text-center duration-300 mb-12"
+    data-aos="fade-up"
+  >
     Планування
   </h2>
-  <p class="md:text-center uppercase text-lg md:text-xl lg:text-2xl mb-12">
+  <p
+    class="md:text-center uppercase text-lg md:text-xl lg:text-2xl mb-12"
+    data-aos="fade-up"
+    data-aos-delay="50"
+  >
     Комфортабельні квартири з вільним плануванням
   </p>
-  <div class="embla mt-8 relative mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20">
+  <div
+    class="embla mt-8 relative mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20"
+    data-aos="fade-up"
+    data-aos-delay="150"
+  >
     <div class="embla__container">
       {map(apartaments, (item) => <ApartamentItem data={item} />)}
     </div>
@@ -24,11 +35,15 @@ import ApartamentItem from "./ApartamentItem.astro";
       id="slide-prev"
       className="absolute top-1/2 -translate-y-1/2 left-2 text-orange cursor-pointer"
       size={48}
+      data-aos="fade-up"
+      data-aos-delay="250"
     />
     <ArrowRight
       id="slide-next"
       className="absolute top-1/2 -translate-y-1/2 right-2 text-orange cursor-pointer"
       size={48}
+      data-aos="fade-up"
+      data-aos-delay="250"
     />
   </div>
 </section>

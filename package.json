@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
+    "@astrojs/check": "^0.8.2",
     "@astrojs/partytown": "^2.1.1",
     "@astrojs/react": "^3.6.0",
     "@astrojs/sitemap": "^3.1.6",
@@ -21,10 +21,14 @@
     "@hookform/resolvers": "^3.9.0",
     "@playform/compress": "^0.0.13",
     "@playform/inline": "^0.0.7",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-navigation-menu": "^1.2.0",
     "@react-input/mask": "^1.2.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.11.5",
+    "aos": "^2.3.4",
+    "astro": "^4.11.6",
     "astro-devtool-breakpoints": "^0.3.0",
     "astro-env": "^0.0.6",
     "astro-icon": "^1.1.0",
@@ -34,6 +38,8 @@
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
     "astro-seo-schema": "^4.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "easy-magnify": "^1.1.4",
     "embla-carousel": "^8.1.6",
     "embla-carousel-autoplay": "^8.1.6",
@@ -49,10 +55,12 @@
     "react-use": "^17.5.0",
     "schema-dts": "^1.1.2",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss": "^3.4.6"
+    "tailwindcss": "^3.4.6",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@types/aos": "^3.0.7",
     "@types/bun": "^1.1.6",
     "@types/lodash": "^4.17.7",
     "@types/plurals-cldr": "^1.0.5",

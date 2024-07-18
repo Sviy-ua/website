@@ -2,15 +2,24 @@
 interface Props {
   title: string;
   description: string;
+  index: number;
 }
 
-const { title, description } = Astro.props;
+const { title, description, index } = Astro.props;
 ---
 
 <div class="flex flex-col gap-0.5 justify-end text-balance">
-  <p class="text-lg md:text-xl xl:text-2xl">{description}</p>
+  <p
+    class="text-lg md:text-xl xl:text-2xl"
+    data-aos="fade-up"
+    data-aos-delay={index * 100}
+  >
+    {description}
+  </p>
   <p
     class="font-medium text-[80px] sm:text-[95px] md:text-[110px] lg:text-[120px] xl:text-[135px]"
+    data-aos="fade-up"
+    data-aos-delay={index * 100 + 50}
   >
     {title}
   </p>

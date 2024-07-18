@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import "aos/dist/aos.css";
 
 import Footer from "@/components/footer/Footer.astro";
 import Navbar from "@/components/navbar/Navbar.astro";
@@ -55,6 +56,11 @@ const { title, className, disableFooter } = Astro.props;
         url: "https://sviydubno.com.ua/",
       }}
     />
+    <script>
+      import aos from "aos";
+
+      aos.init();
+    </script>
   </head>
   <body class="flex flex-col min-h-dvh">
     <Navbar />

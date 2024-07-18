@@ -9,15 +9,19 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<table class="w-full break-inside-avoid mb-6">
+<table class="w-full break-inside-avoid mb-6" data-aos="fade-up">
   <tr>
     <th class="text-left md:text-left font-normal text-2xl">{data.title}</th>
     <th class="w-[65px] text-left md:text-left font-normal">пішки</th>
     <th class="w-[65px] text-right md:text-right font-normal">на авто</th>
   </tr>
   {
-    map(data.locations, (item) => (
-      <tr class="border-b border-black py-1 ">
+    map(data.locations, (item, i) => (
+      <tr
+        class="border-b border-black py-1"
+        data-aos="fade-up"
+        data-aos-delay={100 * i}
+      >
         <td>{item.title}</td>
         <td>{item.walk ? `${item.walk} хв` : ""}</td>
         <td class="text-right">{`${item.car} хв`}</td>

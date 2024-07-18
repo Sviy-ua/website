@@ -11,6 +11,7 @@
 body {
   background-color: #f2ddbb;
   color: currentColor;
+  overflow-x: hidden;
 }
 
 h2 {

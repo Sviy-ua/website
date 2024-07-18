@@ -9,7 +9,10 @@ export default function AboutCollapse() {
   const [isOpened, setIsOpened] = useState(false);
 
   return (
-    <div className="mx-auto flex max-w-[900px] flex-col gap-3 text-balance text-lg md:text-xl lg:text-2xl">
+    <div
+      className="mx-auto flex max-w-[900px] flex-col gap-3 text-balance text-lg md:text-xl lg:text-2xl"
+      data-aos="fade-down"
+    >
       <p>Тут — в історичному місті Дубно, в зручній локації будується сучасна дев’яти поверхова новобудова.</p>
       <p>
         24 ергономічні планування та 96 квартир класу "comfort plus",від 40 m². Обирай готове планування, або плануй
