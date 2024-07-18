@@ -8,6 +8,8 @@ import { SEO } from "astro-seo";
 import { Schema } from "astro-seo-schema";
 import { twMerge } from "tailwind-merge";
 
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   title: string;
   className?: string;
@@ -56,13 +58,16 @@ const { title, className, disableFooter } = Astro.props;
         url: "https://sviydubno.com.ua/",
       }}
     />
-    <script>
-      import aos from "aos";
-
-      aos.init();
-    </script>
+    <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-dvh">
+    <script>
+      import { aosInit } from "@/utils/aos";
+
+      aosInit();
+
+      document.addEventListener("astro:after-swap", aosInit);
+    </script>
     <Navbar />
     <main class={twMerge("flex-1", className)}><slot /></main>
     {!disableFooter && <Footer />}

@@ -8,6 +8,10 @@
   @apply text-balance;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f2ddbb;
   color: currentColor;
