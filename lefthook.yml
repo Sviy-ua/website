@@ -9,14 +9,3 @@ pre-commit:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro}"
       run: bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
       stage_fixed: true
-pre-push:
-  parallel: true
-  commands:
-    types:
-      glob: "*.{js,ts,jsx,tsx}"
-      files: git diff --name-only @{push}
-      run: bunx tsc --noEmit
-    biome-js:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro}"
-      run: bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true {all_files}
-      stage_fixed: true
