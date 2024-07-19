@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "biome check --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
@@ -28,7 +29,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "aos": "^2.3.4",
-    "astro": "^4.11.6",
+    "astro": "^4.12.1",
     "astro-devtool-breakpoints": "^0.3.0",
     "astro-env": "^0.0.6",
     "astro-icon": "^1.1.0",
@@ -40,11 +41,15 @@
     "astro-seo-schema": "^4.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.12",
+    "decap-cms-app": "^3.1.11",
+    "decap-cms-locales": "^3.1.4",
     "easy-magnify": "^1.1.4",
     "embla-carousel": "^8.1.6",
     "embla-carousel-autoplay": "^8.1.6",
     "embla-carousel-class-names": "^8.1.6",
     "embla-carousel-react": "^8.1.6",
+    "lint-staged": "^15.2.7",
     "lodash": "^4.17.21",
     "lucide-react": "^0.408.0",
     "plurals-cldr": "^2.0.1",
@@ -65,7 +70,7 @@
     "@types/lodash": "^4.17.7",
     "@types/plurals-cldr": "^1.0.5",
     "@types/react-collapse": "^5.0.4",
-    "lefthook": "^1.7.2",
+    "husky": "^9.1.1",
     "typescript": "^5.5.3"
   },
   "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook", "sharp"]
