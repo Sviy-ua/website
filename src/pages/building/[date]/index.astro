@@ -1,0 +1,56 @@
+---
+import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/Breadcrumbs";
+import Layout from "@/layouts/Layout.astro";
+import type { BuildingDate } from "@/types/Building";
+import getBuildingDateTitleById from "@/utils/notion/get-building-date-by-id";
+import getBuildings from "@/utils/notion/get-buildings";
+import map from "lodash/map";
+
+function notFound() {
+  Astro.response.status = 404;
+  Astro.response.statusText = "Not Found";
+}
+
+const date = Astro.params.date as string;
+if (!date) notFound();
+
+const pageMeta = (await getBuildingDateTitleById(date)) as BuildingDate;
+if (!pageMeta) notFound();
+
+const data = await getBuildings(pageMeta.id);
+if (!data) notFound();
+---
+
+<Layout title={`${pageMeta.title} | Будівництво`} className="px-6 py-12">
+  <h2
+    class="text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-normal flex-1"
+  >
+    {pageMeta.title}
+  </h2>
+
+  <Breadcrumb>
+    <BreadcrumbList>
+      <BreadcrumbItem>
+        <a href="/building">Будівництво</a>
+      </BreadcrumbItem>
+      <BreadcrumbSeparator />
+      <BreadcrumbItem>
+        <a href={`/building/${date}`}>{pageMeta.title}</a>
+      </BreadcrumbItem>
+    </BreadcrumbList>
+  </Breadcrumb>
+
+  <div
+    class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-x-2 w-full mt-4"
+  >
+    {
+      map(data, (item) => (
+        <img
+          src={item.content}
+          loading="eager"
+          class="h-full w-full object-contain mb-2 break-inside-avoid rounded-md overflow-hidden"
+        />
+      ))
+    }
+  </div>
+</Layout>

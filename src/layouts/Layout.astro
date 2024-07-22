@@ -8,6 +8,7 @@ import { SEO } from "astro-seo";
 import { Schema } from "astro-seo-schema";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import uk from "dayjs/locale/uk.js";
 import { twMerge } from "tailwind-merge";
 
 import { ViewTransitions } from "astro:transitions";
@@ -21,6 +22,7 @@ interface Props {
 const { title, className, disableFooter } = Astro.props;
 
 dayjs.extend(utc);
+dayjs.locale(uk);
 ---
 
 <!doctype html>

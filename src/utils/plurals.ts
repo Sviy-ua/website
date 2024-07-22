@@ -1,7 +1,7 @@
 import plural from "plurals-cldr";
 import type { PartialRecord } from ".";
 
-const allowedKeys = ["room"] as const;
+const allowedKeys = ["room", "element"] as const;
 
 type Keys = (typeof allowedKeys)[number];
 type Plurals = "zero" | "one" | "two" | "few" | "many" | "other";
@@ -14,6 +14,12 @@ const plurals: IPlural = {
     few: "кімнати",
     many: "кімнат",
     other: "кімнати",
+  },
+  element: {
+    one: "елемент",
+    few: "елементи",
+    many: "елементів",
+    other: "елементів",
   },
 };
 

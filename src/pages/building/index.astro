@@ -1,5 +1,38 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import getBuildingDates from "@/utils/notion/get-building-dates";
+import getPlurals from "@/utils/plurals";
+import map from "lodash/map";
+import { ChevronRight } from "lucide-react";
+
+const data = await getBuildingDates();
 ---
 
-<Layout title="Будівництво" />
+<Layout title="Будівництво" className="px-6 py-12">
+  <h2
+    class="text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-normal flex-1"
+  >
+    Будівництво
+  </h2>
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2 mt-12"
+  >
+    {
+      map(data, (el) => (
+        <a
+          href={`/building/${el.date.format("YYYY-MM-DD")}`}
+          class="aspect-square bg-yellow flex flex-col items-center justify-center gap-2 p-4 rounded-md relative overflow-hidden group"
+        >
+          <p class="text-xl font-medium">{el.title}</p>
+          <p>{`${el.count} ${getPlurals(el.count, "element")}`}</p>
+          <div class="absolute bottom-[-100px] right-[-100px] bg-orange size-0 group-hover:size-[200px] rounded-full flex items-center justify-center pr-[50px] pb-[50px] duration-500 ease-in-out cursor-pointer">
+            <ChevronRight
+              size={36}
+              className="size-0 group-hover:size-auto duration-500 ease-in-out"
+            />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>
