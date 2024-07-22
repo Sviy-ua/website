@@ -31,5 +31,6 @@ export default async function getBuildingDateTitleById(date: string): Promise<Bu
     title: nameObject.title[0].plain_text,
     date: dayjs(dateObject.date.start),
     count: content.relation.length,
+    thumbnail: null,
   };
 }

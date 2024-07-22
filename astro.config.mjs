@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import playformCompress from "@playform/compress";
 import playformInline from "@playform/inline";
+import { adapter } from "astro-auto-adapter";
 import devtoolBreakpoints from "astro-devtool-breakpoints";
 import icon from "astro-icon";
 import { astroImageTools } from "astro-imagetools";
@@ -12,9 +13,12 @@ import { defineConfig, envField } from "astro/config";
 
 import robotsTxt from "astro-robots-txt";
 
+const multiAdapter = await adapter();
+
 // https://astro.build/config
 export default defineConfig({
   site: "http://localhost:4321",
+  adapter: multiAdapter,
   output: "server",
   integrations: [
     tailwind(),

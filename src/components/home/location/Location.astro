@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import locations from "@/data/locations";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import map from "lodash/map";
 import LocationTable from "./LocationTable.astro";
 ---
@@ -43,6 +43,6 @@ import LocationTable from "./LocationTable.astro";
     ЖК SVIY - ДЕ ВСЕ, ЩО ПОТРІБНО - ПОРУЧ
   </h2>
   <div class="columns-1 md:columns-2 mt-6">
-    {map(locations, (item, index) => <LocationTable data={item} />)}
+    {map(locations, (item) => <LocationTable data={item} />)}
   </div>
 </section>

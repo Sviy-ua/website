@@ -10,4 +10,5 @@ export type BuildingDate = {
   title: string;
   date: dayjs.Dayjs;
   count: number;
+  thumbnail: string | null;
 };
