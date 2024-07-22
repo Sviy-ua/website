@@ -7,7 +7,6 @@ import playformInline from "@playform/inline";
 import { adapter } from "astro-auto-adapter";
 import devtoolBreakpoints from "astro-devtool-breakpoints";
 import icon from "astro-icon";
-import { astroImageTools } from "astro-imagetools";
 import metaTags from "astro-meta-tags";
 import { defineConfig, envField } from "astro/config";
 
@@ -31,7 +30,6 @@ export default defineConfig({
     partytown(),
     playformInline(),
     robotsTxt(),
-    astroImageTools,
   ],
   experimental: {
     env: {
