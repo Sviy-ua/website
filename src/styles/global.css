@@ -80,3 +80,25 @@ h6 {
 .swup-progress-bar {
   background-color: #D8CF37;
 }
+
+.heart-animation{
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  14%{
+    transform: scale(1.3);
+  }
+  28%{
+    transform: scale(1);
+  }
+  42%{
+    transform: scale(1.3);
+  }
+  70%{
+    transform: scale(1);
+  }
+}
