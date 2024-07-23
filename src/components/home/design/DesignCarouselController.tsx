@@ -22,7 +22,7 @@ export default function DesignCarouselController() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-center gap-3">
-        {map(designs, (item, index) => (
+        {map(designs, (item) => (
           <button
             type="button"
             key={item.id}
