@@ -1,12 +1,11 @@
 import type { IDesignCategory } from "@/data/designs";
 import map from "lodash/map";
-import { memo } from "react";
 
 interface IProps {
   selected?: IDesignCategory;
 }
 
-function DesignCarouselContainer({ selected }: IProps) {
+export default function DesignCarouselContainer({ selected }: IProps) {
   if (!selected) return null;
   return (
     <div className="embla__container">
@@ -25,5 +24,3 @@ function DesignCarouselContainer({ selected }: IProps) {
     </div>
   );
 }
-
-export default memo(DesignCarouselContainer);
