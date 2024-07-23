@@ -31,8 +31,6 @@ export default function DesignCarouselController() {
               "flex-1 text-nowrap border border-black px-3 py-2 font-medium text-xl duration-300 ease-in-out hover:bg-orange-hover",
               selected === item.id && "bg-orange",
             )}
-            data-aos="fade-up"
-            data-aos-delay={50 * index}
           >
             {item.title}
           </button>

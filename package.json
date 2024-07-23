@@ -40,6 +40,7 @@
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
     "astro-seo-schema": "^4.0.2",
+    "astro-vtbot": "^1.8.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.12",
@@ -49,7 +50,7 @@
     "embla-carousel-react": "^8.1.7",
     "lint-staged": "^15.2.7",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.412.0",
+    "lucide-react": "^0.414.0",
     "plurals-cldr": "^2.0.1",
     "react": "^18.3.1",
     "react-collapse": "^5.1.1",
@@ -69,7 +70,7 @@
     "@types/plurals-cldr": "^1.0.5",
     "@types/react-collapse": "^5.0.4",
     "husky": "^9.1.1",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "trustedDependencies": ["@biomejs/biome", "esbuild", "lefthook", "sharp"]
 }

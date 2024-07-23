@@ -10,6 +10,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import uk from "dayjs/locale/uk.js";
 import { twMerge } from "tailwind-merge";
+import ProgressBar from "astro-vtbot/components/ProgressBar.astro";
 
 import { ViewTransitions } from "astro:transitions";
 
@@ -74,6 +75,7 @@ dayjs.locale(uk);
 
       document.addEventListener("astro:after-swap", aosInit);
     </script>
+    <ProgressBar />
     <Navbar />
     <main class={twMerge("flex-1", className)}><slot /></main>
     {!disableFooter && <Footer />}

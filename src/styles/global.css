@@ -77,3 +77,6 @@ h6 {
 .break-inside {
   break-inside: avoid;
 }
+.swup-progress-bar {
+  background-color: #D8CF37;
+}
