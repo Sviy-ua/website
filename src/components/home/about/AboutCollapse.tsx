@@ -10,7 +10,7 @@ export default function AboutCollapse() {
 
   return (
     <div
-      className="mx-auto flex max-w-[900px] flex-col gap-3 text-balance text-lg md:text-xl lg:text-2xl"
+      className="aos-init mx-auto flex max-w-[900px] flex-col gap-3 text-balance text-lg md:text-xl lg:text-2xl"
       data-aos="fade-down"
     >
       <p>Тут — в історичному місті Дубно, в зручній локації будується сучасна дев’ятиповерхова новобудова.</p>

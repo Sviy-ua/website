@@ -45,7 +45,7 @@ export default function DesignCarouselController() {
           </button>
         ))}
       </div>
-      <div className="relative pt-6" data-aos="fade-up" data-aos-delay="150">
+      <div className="aos-init relative pt-6" data-aos="fade-up" data-aos-delay="150">
         <div className={twMerge("embla duration-300", hidden ? "opacity-0" : "opacity-100")} ref={emblaRef}>
           <DesignCarouselContainer selected={selectedDesign} />
         </div>

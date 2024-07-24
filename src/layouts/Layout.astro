@@ -11,6 +11,7 @@ import utc from "dayjs/plugin/utc";
 import uk from "dayjs/locale/uk.js";
 import { twMerge } from "tailwind-merge";
 import ProgressBar from "astro-vtbot/components/ProgressBar.astro";
+import { Toaster } from "react-hot-toast";
 
 import { ViewTransitions } from "astro:transitions";
 
@@ -75,6 +76,7 @@ dayjs.locale(uk);
 
       document.addEventListener("astro:after-swap", aosInit);
     </script>
+    <Toaster client:load position="top-right" />
     <ProgressBar />
     <Navbar />
     <main class={twMerge("flex-1", className)}><slot /></main>
