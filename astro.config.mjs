@@ -35,8 +35,11 @@ export default defineConfig({
         NOTION_API_KEY: envField.string({ context: "server", access: "secret" }),
         NOTION_BUILDING_DATES_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
         NOTION_BULDINGS_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
+        NOTION_GALLERY_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
+
         CLOUDFLARE_TURNSTILE_SITE_KEY: envField.string({ context: "client", access: "public" }),
         CLOUDFLARE_TURNSTILE_SECRET_KEY: envField.string({ context: "server", access: "secret" }),
+
         TELEGRAM_BOT_TOKEN: envField.string({ context: "server", access: "secret" }),
         TELEGRAM_CHAT_ID: envField.string({ context: "server", access: "secret" }),
       },

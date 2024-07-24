@@ -48,7 +48,7 @@ export default async function getBuildings(dateId: string): Promise<BuildingItem
     },
   });
 
-  const galleryItems: (BuildingItem | null)[] = map(gallery?.results, (post) => {
+  const results: (BuildingItem | null)[] = map(gallery?.results, (post) => {
     // If post is not a full page, return null
     if (!isFullPage(post)) return null;
 
@@ -77,5 +77,5 @@ export default async function getBuildings(dateId: string): Promise<BuildingItem
     return null;
   });
 
-  return compact(galleryItems);
+  return compact(results);
 }
