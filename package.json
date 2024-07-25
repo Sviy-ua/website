@@ -20,8 +20,6 @@
     "@hookform/resolvers": "^3.9.0",
     "@julian_cataldo/astro-lightbox": "^0.10.11",
     "@notionhq/client": "^2.2.15",
-    "@playform/compress": "^0.1.0",
-    "@playform/inline": "^0.1.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^1.2.0",

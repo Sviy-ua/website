@@ -1,8 +1,6 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import playformCompress from "@playform/compress";
-import playformInline from "@playform/inline";
 import { adapter } from "astro-auto-adapter";
 import devtoolBreakpoints from "astro-devtool-breakpoints";
 import icon from "astro-icon";
@@ -18,17 +16,7 @@ export default defineConfig({
   site: "http://localhost:4321",
   adapter: multiAdapter,
   output: "server",
-  integrations: [
-    tailwind(),
-    playformCompress(),
-    icon(),
-    sitemap(),
-    react(),
-    metaTags(),
-    devtoolBreakpoints(),
-    playformInline(),
-    robotsTxt(),
-  ],
+  integrations: [tailwind(), icon(), sitemap(), react(), metaTags(), devtoolBreakpoints(), robotsTxt()],
   experimental: {
     env: {
       schema: {
@@ -51,13 +39,5 @@ export default defineConfig({
     ssr: {
       noExternal: ["react-use"],
     },
-    plugins: [
-      {
-        name: "import.meta.url-transformer",
-        transform: (code, id) => {
-          if (id.endsWith(".astro")) return code.replace(/import.meta.url/g, `"${id}"`);
-        },
-      },
-    ],
   },
 });
