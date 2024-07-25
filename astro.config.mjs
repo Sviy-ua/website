@@ -37,7 +37,7 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      noExternal: ["react-use"],
+      noExternal: ["react-use", "fslightbox-react"],
     },
   },
 });

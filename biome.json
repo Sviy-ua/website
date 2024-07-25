@@ -5,6 +5,7 @@
   },
   "linter": {
     "enabled": true,
+    "ignore": ["public/fslightbox/fslightbox.js"],
     "rules": {
       "recommended": true,
       "complexity": {
@@ -23,6 +24,7 @@
   },
   "formatter": {
     "enabled": true,
+    "ignore": ["public/fslightbox/fslightbox.js"],
     "formatWithErrors": true,
     "attributePosition": "auto",
     "indentStyle": "space",

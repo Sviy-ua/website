@@ -31,12 +31,26 @@ const { data } = Astro.props;
         </p>
       </div>
     </div>
-    <div data-lightbox="true" class="flex items-center justify-center p-6">
+    <a
+      data-lightbox="true"
+      class="flex items-center justify-center p-6"
+      data-fslightbox={`apartament-${data.src}`}
+      href="#lightbox-apartament"
+    >
       <img
         src={data.src}
         class="h-[200px] object-contain duration-300 sm:h-[300px] md:h-[400px] lg:h-[500px]"
         alt=""
       />
-    </div>
+    </a>
+  </div>
+  <div class="hidden">
+    <img src={data.src} alt="" id="lightbox-apartament" />
   </div>
 </div>
+
+<script>
+  // @ts-ignore
+  const instance = new FsLightbox();
+  instance.props.sources = [document.getElementById("lightbox-apartament")];
+</script>
