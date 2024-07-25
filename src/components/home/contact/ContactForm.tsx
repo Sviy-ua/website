@@ -1,24 +1,20 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { InputMask } from "@react-input/mask";
 import { z } from "astro/zod";
-import { CLOUDFLARE_TURNSTILE_SITE_KEY } from "astro:env/client";
+import { GOOGLE_RECAPTCHA_SITE_KEY } from "astro:env/client";
 import ky from "ky";
+import constant from "lodash/constant";
 import { LoaderCircle } from "lucide-react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { load } from "recaptcha-v3";
 
-const schema = z
-  .object({
-    name: z.string({ required_error: "Ім'я є обов'язковим" }).min(1, "Ім'я є обов'язковим"),
-    phone: z.string({ required_error: "Телефон є обов'язковим" }).min(1, "Телефон є обов'язковим"),
-    comment: z.string({ required_error: "Коментар є обов'язковим" }).min(1, "Коментар є обов'язковим"),
-    captcha: z.nullable(z.string({ required_error: "Капча є обов'язкова" }).min(1, "Капча є обов'язкова")),
-  })
-  .refine((data) => data.captcha, {
-    message: "Капча є обов'язкова",
-  });
+const schema = z.object({
+  name: z.string({ required_error: "Ім'я є обов'язковим" }).min(1, "Ім'я є обов'язковим"),
+  phone: z.string({ required_error: "Телефон є обов'язковим" }).min(1, "Телефон є обов'язковим"),
+  comment: z.string({ required_error: "Коментар є обов'язковим" }).min(1, "Коментар є обов'язковим"),
+});
 type Schema = z.infer<typeof schema>;
 
 interface IProps {
@@ -31,14 +27,27 @@ export default function ContactForm({ formId, buttonText }: IProps) {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
   } = useForm<Schema>({ resolver: zodResolver(schema) });
 
   const [isLoading, setIsLoading] = useState(false);
-  const captchaRef = useRef<TurnstileInstance | null>(null);
-  const onSubmit: SubmitHandler<Schema> = (data: Schema) => {
+
+  const onSubmit: SubmitHandler<Schema> = async (data: Schema, captcha: unknown) => {
     setIsLoading(true);
-    ky.post("/api/contact", { json: { ...data, formId } })
+    const recaptcha = await load(GOOGLE_RECAPTCHA_SITE_KEY).catch(constant(null));
+    if (!recaptcha) {
+      toast.error("Не вдалось завантажити ReCaptcha. Спробуйте ще раз");
+      setIsLoading(false);
+      return;
+    }
+
+    const token = await recaptcha.execute("contact_form").catch(constant(null));
+    if (!token) {
+      toast.error("Не вдалось отримати токен ReCaptcha. Спробуйте ще раз");
+      setIsLoading(false);
+      return;
+    }
+
+    ky.post("/api/contact", { json: { ...data, formId, captcha: token } })
       .json()
       .then(() => {
         toast.success("Ваше повідомлення було відправлено. Ми звяжемося з вами найближчим часом");
@@ -48,8 +57,6 @@ export default function ContactForm({ formId, buttonText }: IProps) {
       })
       .finally(() => {
         setIsLoading(false);
-        setValue("captcha", null);
-        captchaRef.current?.reset();
       });
   };
   return (
@@ -88,21 +95,10 @@ export default function ContactForm({ formId, buttonText }: IProps) {
         />
         {errors.comment && <p className="mt-1 text-red-700 text-sm">{errors.comment.message}</p>}
       </div>
-      <Turnstile
-        ref={captchaRef}
-        siteKey={CLOUDFLARE_TURNSTILE_SITE_KEY}
-        className="mx-auto"
-        options={{
-          retry: "never",
-        }}
-        onSuccess={(e) => setValue("captcha", e)}
-        onExpire={() => setValue("captcha", null)}
-        onError={() => setValue("captcha", null)}
-        onReset={() => setValue("captcha", null)}
-      />
+
       <button
         type="submit"
-        className="aos-init flex flex-row items-center justify-center gap-2 bg-yellow px-3 py-2 font-medium text-xl uppercase"
+        className="aos-init g-recaptcha flex flex-row items-center justify-center gap-2 bg-yellow px-3 py-2 font-medium text-xl uppercase"
         data-aos="fade-right"
         data-aos-delay="300"
         disabled={isLoading}

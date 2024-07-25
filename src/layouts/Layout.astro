@@ -66,13 +66,17 @@ dayjs.locale(uk);
         url: "https://sviydubno.com.ua/",
       }}
     />
+
     <ViewTransitions />
   </head>
-  <body class="flex flex-col min-h-dvh">
+  <body class="flex flex-col min-h-dvh overflow-x-hidden">
     <script>
       import { aosInit } from "@/utils/aos";
+      import { GOOGLE_RECAPTCHA_SITE_KEY } from "astro:env/client";
+      import { load } from "recaptcha-v3";
 
       aosInit();
+      load(GOOGLE_RECAPTCHA_SITE_KEY);
 
       document.addEventListener("astro:after-swap", aosInit);
     </script>

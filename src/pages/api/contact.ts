@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { CLOUDFLARE_TURNSTILE_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from "astro:env/server";
+import { GOOGLE_RECAPTCHA_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from "astro:env/server";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
@@ -35,10 +35,13 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     const response = await ky
-      .post("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-        json: {
-          secret: CLOUDFLARE_TURNSTILE_SECRET_KEY,
+      .post("https://www.google.com/recaptcha/api/siteverify", {
+        searchParams: {
+          secret: GOOGLE_RECAPTCHA_SECRET_KEY,
           response: captcha,
+        },
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
         },
       })
       .json<{ success: boolean }>()
