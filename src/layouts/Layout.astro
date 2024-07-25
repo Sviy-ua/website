@@ -12,7 +12,6 @@ import uk from "dayjs/locale/uk.js";
 import { twMerge } from "tailwind-merge";
 import ProgressBar from "astro-vtbot/components/ProgressBar.astro";
 import { Toaster } from "react-hot-toast";
-import Lightbox from "@julian_cataldo/astro-lightbox/Lightbox.astro";
 
 import { ViewTransitions } from "astro:transitions";
 
@@ -68,7 +67,6 @@ dayjs.locale(uk);
       }}
     />
 
-    <Lightbox />
     <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-dvh overflow-x-hidden">
