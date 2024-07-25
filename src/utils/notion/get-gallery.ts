@@ -5,7 +5,7 @@ import map from "lodash/map";
 import client from ".";
 
 export default async function getGallery(): Promise<string[]> {
-  const gallery = await client.databases.query({
+  const response = await client.databases.query({
     database_id: NOTION_GALLERY_DATABASE_ID,
     filter: {
       property: "Image",
@@ -21,7 +21,7 @@ export default async function getGallery(): Promise<string[]> {
     ],
   });
 
-  const galleryItems: (string | null)[] = map(gallery?.results, (post) => {
+  const results: (string | null)[] = map(response?.results, (post) => {
     // If post is not a full page, return null
     if (!isFullPage(post)) return null;
 
@@ -37,5 +37,5 @@ export default async function getGallery(): Promise<string[]> {
     return content.file.url;
   });
 
-  return compact(galleryItems);
+  return compact(results);
 }

@@ -6,7 +6,7 @@ import map from "lodash/map";
 import client from ".";
 
 export default async function getBuildings(dateId: string): Promise<BuildingItem[]> {
-  const gallery = await client.databases.query({
+  const response = await client.databases.query({
     database_id: NOTION_BULDINGS_DATABASE_ID,
     filter: {
       and: [
@@ -48,7 +48,7 @@ export default async function getBuildings(dateId: string): Promise<BuildingItem
     },
   });
 
-  const results: (BuildingItem | null)[] = map(gallery?.results, (post) => {
+  const results: (BuildingItem | null)[] = map(response?.results, (post) => {
     // If post is not a full page, return null
     if (!isFullPage(post)) return null;
 

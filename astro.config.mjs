@@ -36,6 +36,7 @@ export default defineConfig({
         NOTION_BUILDING_DATES_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
         NOTION_BULDINGS_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
         NOTION_GALLERY_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
+        NOTION_APARTAMENTS_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
 
         GOOGLE_RECAPTCHA_SITE_KEY: envField.string({ context: "client", access: "public" }),
         GOOGLE_RECAPTCHA_SECRET_KEY: envField.string({ context: "server", access: "secret" }),
@@ -48,7 +49,7 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      noExternal: ["react-use"],
+      noExternal: ["react-use", "react-native-image-modal"],
     },
     plugins: [
       {

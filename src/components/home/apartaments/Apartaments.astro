@@ -1,9 +1,11 @@
 ---
 import "@/styles/embla.css";
-import apartaments from "@/data/apartaments";
 import map from "lodash/map";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ApartamentItem from "./ApartamentItem.astro";
+import getApartaments from "@/utils/notion/get-apartaments";
+
+const data = await getApartaments();
 ---
 
 <section
@@ -29,7 +31,7 @@ import ApartamentItem from "./ApartamentItem.astro";
     data-aos-delay="150"
   >
     <div class="embla__container">
-      {map(apartaments, (item) => <ApartamentItem data={item} />)}
+      {map(data, (item) => <ApartamentItem data={item} />)}
     </div>
     <ArrowLeft
       id="slide-prev"
