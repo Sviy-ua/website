@@ -2,7 +2,7 @@ import type { MenuItem } from "@/types/MenuItem";
 import map from "lodash/map";
 import { Menu } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/Sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/Sheet";
 
 interface IProps {
   items: MenuItem[];
@@ -17,6 +17,7 @@ export default function NavbarMobile({ items, children }: IProps) {
           <Menu size={32} />
         </SheetTrigger>
         <SheetContent className=" h-dvh bg-orange" side="top">
+          <SheetTitle>Меню</SheetTitle>
           {children}
           <Accordion type="single" collapsible className="flex w-full flex-col gap-4 pt-4">
             {map(items, (item) => {

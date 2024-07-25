@@ -17,7 +17,7 @@ interface IProps {
 
 export default function NavbarDesktop({ items }: IProps) {
   return (
-    <NavigationMenu className="hidden md:flex">
+    <NavigationMenu className="z-50 hidden md:flex">
       <NavigationMenuList>
         {map(items, (item) => (
           <NavigationMenuItem key={item.id}>
