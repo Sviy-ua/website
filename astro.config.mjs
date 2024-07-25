@@ -49,7 +49,7 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      noExternal: ["react-use", "react-native-image-modal"],
+      noExternal: ["react-use"],
     },
     plugins: [
       {
