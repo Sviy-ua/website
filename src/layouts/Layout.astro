@@ -16,7 +16,7 @@ import { Toaster } from "react-hot-toast";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title: string;
+  title?: string;
   className?: string;
   disableFooter?: boolean;
 }
@@ -37,7 +37,7 @@ dayjs.locale(uk);
     <SEO
       title={title}
       titleTemplate="%s | Sviy"
-      description=""
+      description={`Сучасна дев'ятиповерхова новобудова у м. Дубно. 24 ергономічних планувань та 96 квартири класу "comfort plus", від 40 м². Обирай готове планування, або плануй свою оселю на власний розсуд, щоб тобі було затишно та комфортно.`}
       charset="utf-8"
       openGraph={{
         basic: {
@@ -49,7 +49,7 @@ dayjs.locale(uk);
       twitter={{
         title: "Sviy",
         image: "",
-        description: "",
+        description: `Сучасна дев'ятиповерхова новобудова у м. Дубно. 24 ергономічних планувань та 96 квартири класу "comfort plus", від 40 м². Обирай готове планування, або плануй свою оселю на власний розсуд, щоб тобі було затишно та комфортно.`,
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico?", type: "image/x-icon" }],
