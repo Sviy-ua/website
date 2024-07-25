@@ -102,11 +102,3 @@ h6 {
     transform: scale(1);
   }
 }
-
-.my-component {
-  background: #fff;
-}
-
-.fullscreen-enabled .my-component {
-  background: #191919;
-}
