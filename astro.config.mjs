@@ -31,6 +31,8 @@ export default defineConfig({
 
         TELEGRAM_BOT_TOKEN: envField.string({ context: "server", access: "secret" }),
         TELEGRAM_CHAT_ID: envField.string({ context: "server", access: "secret" }),
+        SMARTORANGE_CRM_API_KEY: envField.string({ context: "server", access: "secret" }),
+        SMARTORANGE_CRM_ORIGIN: envField.string({ context: "server", access: "secret" }),
       },
       validateSecrets: true,
     },

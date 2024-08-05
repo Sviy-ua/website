@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { GOOGLE_RECAPTCHA_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from "astro:env/server";
+import { GOOGLE_RECAPTCHA_SECRET_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, SMARTORANGE_CRM_ORIGIN, SMARTORANGE_CRM_API_KEY } from "astro:env/server";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
@@ -7,6 +7,9 @@ import ky from "ky";
 import constant from "lodash/constant";
 
 const TELEGRAM_API_ROUTE = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}`;
+
+const SMARTORANGE_CRM_AUTHENTICATION_URL = `${SMARTORANGE_CRM_ORIGIN}/v1/authentication/`;
+const SMARTORANGE_CRM_LEAD_ADD_URL = `${SMARTORANGE_CRM_ORIGIN}/v1/crm/leadAdd`;
 
 const forms: Record<string, string> = {
   contact_individual: "Запиc на індивідуальну консультацію",
@@ -87,6 +90,30 @@ export const POST: APIRoute = async ({ request }) => {
         status: 500,
       });
     }
+
+    const devbaseAutorization: any = await ky.post(SMARTORANGE_CRM_AUTHENTICATION_URL, {
+      json: {
+        api_key: SMARTORANGE_CRM_API_KEY,
+      },
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
+    }).json();
+
+    if (devbaseAutorization.access_token) {
+      const devbaseLeadAdd = await ky.post(SMARTORANGE_CRM_LEAD_ADD_URL, {
+        json: {
+          data: {
+            'title': `Aristos | ${name} | ${phone} `,
+            'name': name,
+            'phone': phone,
+            'utm_source': 'site',
+        },
+        'access_token': devbaseAutorization.access_token,
+        },
+      });
+    }
+
 
     return new Response(JSON.stringify(response), {
       status: 200,
