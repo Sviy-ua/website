@@ -14,9 +14,11 @@ async function getThumbnail(id: string) {
 
   if (content.type !== "files") return null;
   if (!content.files.length) return null;
-  if (content.files[0].type !== "file") return null;
 
-  return content.files[0].file.url;
+  if (content.files[0].type === "file") return content.files[0].file.url;
+  if (content.files[0].type === "external") return content.files[0].external.url;
+
+  return null;
 }
 
 export default async function getBuildingDates(): Promise<BuildingDate[]> {

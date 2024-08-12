@@ -1,0 +1,26 @@
+---
+import type { BuildingItem } from "@/types/Building";
+
+interface Props {
+  item: BuildingItem;
+}
+
+const { item } = Astro.props;
+
+const id = Math.random().toString(36);
+---
+
+<a
+  data-lightbox="true"
+  data-fslightbox={`building-${item.content}`}
+  href="#lightbox-apartament"
+>
+  <img
+    src={item.content}
+    loading="eager"
+    class="h-full w-full object-contain mb-2 break-inside-avoid rounded-md overflow-hidden"
+  />
+</a>
+<div class="hidden">
+  <img src={item.content} alt="" id="lightbox-apartament" />
+</div>

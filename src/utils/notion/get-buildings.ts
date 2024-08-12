@@ -61,20 +61,17 @@ export default async function getBuildings(dateId: string): Promise<BuildingItem
     const content = Content.files[0];
     const _type = Type.select.name;
 
-    if (content.type !== "file") return null;
+    const response: BuildingItem = {
+      content: "",
+      type: "Photo",
+    };
 
-    if (_type === "Photo")
-      return {
-        content: content.file.url,
-        type: "Photo",
-      };
-    if (_type === "Video")
-      return {
-        content: content.file.url,
-        type: "Video",
-      };
+    if (content.type === "file") response.content = content.file.url;
+    else if (content.type === "external") response.content = content.external.url;
 
-    return null;
+    if (_type === "Video") response.type = "Video";
+
+    return response;
   });
 
   return compact(results);
