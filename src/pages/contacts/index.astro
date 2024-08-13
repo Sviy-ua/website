@@ -1,13 +1,15 @@
 ---
-import { Image } from "astro:assets";
 import ContactItem from "@/components/contacts/ContactItem.astro";
 import FooterSocialIcon from "@/components/footer/FooterSocialIcon.astro";
 import Layout from "@/layouts/Layout.astro";
+import seo from "@/utils/seo";
+import socialLinks from "@/utils/social-links";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 ---
 
 <Layout
-  title="Контакти"
+  seo={seo.contacts}
   className="px-6 py-12 bg-yellow space-y-12"
   disableFooter
 >
@@ -44,8 +46,16 @@ import { Icon } from "astro-icon/components";
       <ContactItem title="Телефон"> 0 (800) 30 10 36 </ContactItem>
       <ContactItem title="Пошта"> sviy_dubno@gmail.com </ContactItem>
       <ContactItem title="Ми в соцмережах" className="flex flex-row gap-2">
-        <FooterSocialIcon icon="socials/instagram" href="/" title="Instagram" />
-        <FooterSocialIcon icon="socials/facebook" href="/" title="Facebook" />
+        <FooterSocialIcon
+          icon="socials/instagram"
+          href={socialLinks.instagram}
+          title="Instagram"
+        />
+        <FooterSocialIcon
+          icon="socials/facebook"
+          href={socialLinks.facebook}
+          title="Facebook"
+        />
       </ContactItem>
     </div>
   </div>

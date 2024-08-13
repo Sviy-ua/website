@@ -16,12 +16,15 @@ import { Toaster } from "react-hot-toast";
 import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title?: string;
   className?: string;
   disableFooter?: boolean;
+  seo: {
+    title?: string;
+    description: string;
+  };
 }
 
-const { title, className, disableFooter } = Astro.props;
+const { className, disableFooter, seo } = Astro.props;
 
 dayjs.extend(utc);
 dayjs.locale(uk);
@@ -35,21 +38,27 @@ dayjs.locale(uk);
 
     <!-- SEO -->
     <SEO
-      title={title}
+      title={seo.title}
       titleTemplate="%s | Sviy"
-      description={`Сучасна дев'ятиповерхова новобудова у м. Дубно. 24 ергономічних планувань та 96 квартири класу "comfort plus", від 40 м². Обирай готове планування, або плануй свою оселю на власний розсуд, щоб тобі було затишно та комфортно.`}
+      titleDefault="Sviy"
       charset="utf-8"
+      description={seo.description}
       openGraph={{
         basic: {
-          title: "Sviy",
+          title: seo.title ? `${seo.title} | Sviy` : "Sviy",
           type: "website",
           image: "",
         },
+        optional: {
+          description: seo.description,
+          siteName: "Sviy",
+        },
       }}
       twitter={{
-        title: "Sviy",
+        title: seo.title ? `${seo.title} | Sviy` : "Sviy",
         image: "",
-        description: `Сучасна дев'ятиповерхова новобудова у м. Дубно. 24 ергономічних планувань та 96 квартири класу "comfort plus", від 40 м². Обирай готове планування, або плануй свою оселю на власний розсуд, щоб тобі було затишно та комфортно.`,
+        description: seo.description,
+        creator: "HighError",
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico?", type: "image/x-icon" }],

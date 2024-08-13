@@ -1,4 +1,5 @@
 ---
+import socialLinks from "@/utils/social-links";
 import { Icon } from "astro-icon/components";
 import FooterContact from "./FooterContact.astro";
 import FooterSocialIcon from "./FooterSocialIcon.astro";
@@ -26,15 +27,10 @@ import FooterSocialIcon from "./FooterSocialIcon.astro";
       <div>
         <p>Напишіть нам</p>
         <div class="flex flex-row gap-3 mt-2">
-          <FooterSocialIcon icon="socials/telegram" href="/" title="Telegram" />
-          <!-- <FooterSocialIcon
-            icon="socials/messenger"
-            href="https://www.facebook.com/sviydubno"
-            title="Messenger"
-          /> -->
+          <!-- <FooterSocialIcon icon="socials/telegram" href="/" title="Telegram" /> -->
           <FooterSocialIcon
             icon="socials/instagram"
-            href="https://www.instagram.com/sviy_dubno/"
+            href={socialLinks.instagram}
             title="Instagram"
           />
         </div>
@@ -44,10 +40,14 @@ import FooterSocialIcon from "./FooterSocialIcon.astro";
         <div class="flex flex-row gap-3 mt-2">
           <FooterSocialIcon
             icon="socials/instagram"
-            href="https://www.instagram.com/sviy_dubno/"
+            href={socialLinks.instagram}
             title="Instagram"
           />
-          <FooterSocialIcon icon="socials/facebook" href="https://www.facebook.com/sviydubno" title="Facebook" />
+          <FooterSocialIcon
+            icon="socials/facebook"
+            href={socialLinks.facebook}
+            title="Facebook"
+          />
         </div>
       </div>
     </div>

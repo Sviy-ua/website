@@ -22,7 +22,10 @@ const data = await getBuildings(pageMeta.id);
 if (!data) notFound();
 ---
 
-<Layout title={`${pageMeta.title} | Будівництво`} className="px-6 py-12">
+<Layout seo={{
+  title: `${pageMeta.title} | Будівництво`,
+  description: "Слідкуйте за ходом будівництва ЖК SVIY: фото, відео та опис кожного етапу."
+}} className="px-6 py-12">
   <h2
     class="text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-normal flex-1"
   >

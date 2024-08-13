@@ -10,9 +10,10 @@ import Gallery from "@/components/home/gallery/Gallery.astro";
 import Location from "@/components/home/location/Location.astro";
 import Specifications from "@/components/home/specifications/Specifications.astro";
 import Layout from "@/layouts/Layout.astro";
+import seo from "@/utils/seo";
 ---
 
-<Layout title="Про нас">
+<Layout seo={seo.home}>
   <Hero />
   <Concept />
   <About />

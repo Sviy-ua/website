@@ -2,13 +2,14 @@
 import Layout from "@/layouts/Layout.astro";
 import getBuildingDates from "@/utils/notion/get-building-dates";
 import getPlurals from "@/utils/plurals";
+import seo from "@/utils/seo";
 import map from "lodash/map";
 import { ChevronRight } from "lucide-react";
 
 const data = await getBuildingDates();
 ---
 
-<Layout title="Будівництво" className="px-6 py-12">
+<Layout seo={seo.building} className="px-6 py-12">
   <h2
     class="text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] xl:text-[160px] font-normal flex-1"
   >
