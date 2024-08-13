@@ -14,6 +14,7 @@ import ProgressBar from "astro-vtbot/components/ProgressBar.astro";
 import { Toaster } from "react-hot-toast";
 
 import { ViewTransitions } from "astro:transitions";
+import { BASE_URL } from "astro:env/client";
 
 interface Props {
   className?: string;
@@ -47,7 +48,7 @@ dayjs.locale(uk);
         basic: {
           title: seo.title ? `${seo.title} | Sviy` : "Sviy",
           type: "website",
-          image: "",
+          image: `${BASE_URL}/facebook.jpg`,
         },
         optional: {
           description: seo.description,
@@ -56,7 +57,7 @@ dayjs.locale(uk);
       }}
       twitter={{
         title: seo.title ? `${seo.title} | Sviy` : "Sviy",
-        image: "",
+        image: `${BASE_URL}/twitter.jpg`,
         description: seo.description,
         creator: "HighError",
       }}

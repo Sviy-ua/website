@@ -13,13 +13,15 @@ const multiAdapter = await adapter();
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321",
+  site: process.env.BASE_URL,
   adapter: multiAdapter,
   output: "server",
   integrations: [tailwind(), icon(), sitemap(), react(), metaTags(), devtoolBreakpoints(), robotsTxt()],
   experimental: {
     env: {
       schema: {
+        BASE_URL: envField.string({ context: "client", access: "public" }),
+
         NOTION_API_KEY: envField.string({ context: "server", access: "secret" }),
         NOTION_BUILDING_DATES_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
         NOTION_BULDINGS_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
