@@ -4,6 +4,7 @@ import map from "lodash/map";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ApartamentItem from "./ApartamentItem.astro";
 import getApartaments from "@/utils/notion/get-apartaments";
+import ApartamentCarousel from "./ApartamentCarousel";
 
 const data = await getApartaments();
 ---
@@ -25,29 +26,7 @@ const data = await getApartaments();
   >
     Комфортабельні квартири з вільним плануванням
   </p>
-  <div
-    class="embla mt-8 relative mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20"
-    data-aos="fade-up"
-    data-aos-delay="150"
-  >
-    <div class="embla__container">
-      {map(data, (item) => <ApartamentItem data={item} />)}
-    </div>
-    <ArrowLeft
-      id="slide-prev"
-      className="absolute top-1/2 -translate-y-1/2 left-2 text-orange cursor-pointer"
-      size={48}
-      data-aos="fade-up"
-      data-aos-delay="250"
-    />
-    <ArrowRight
-      id="slide-next"
-      className="absolute top-1/2 -translate-y-1/2 right-2 text-orange cursor-pointer"
-      size={48}
-      data-aos="fade-up"
-      data-aos-delay="250"
-    />
-  </div>
+  <ApartamentCarousel data={data} client:load />
 </section>
 
 <script>
