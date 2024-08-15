@@ -53,20 +53,24 @@ const data = await getApartaments();
 <script>
   import EmblaCarousel from "embla-carousel";
 
-  const emblaNode = document.querySelector(
-    "#apartaments .embla"
-  ) as HTMLElement;
-  const options = { loop: true };
+  document.addEventListener("astro:page-load", () => {
+    const emblaNode = document.querySelector(
+      "#apartaments .embla"
+    ) as HTMLElement;
+    const options = { loop: true };
 
-  const emblaApi = EmblaCarousel(emblaNode, options);
+    if (!emblaNode) return;
 
-  const prevButton = document.querySelector(
-    "#apartaments #slide-prev"
-  ) as HTMLElement;
-  const nextButton = document.querySelector(
-    "#apartaments #slide-next"
-  ) as HTMLElement;
+    const emblaApi = EmblaCarousel(emblaNode, options);
 
-  prevButton.addEventListener("click", () => emblaApi.scrollPrev());
-  nextButton.addEventListener("click", () => emblaApi.scrollNext());
+    const prevButton = document.querySelector(
+      "#apartaments #slide-prev"
+    ) as HTMLElement;
+    const nextButton = document.querySelector(
+      "#apartaments #slide-next"
+    ) as HTMLElement;
+
+    prevButton.addEventListener("click", () => emblaApi.scrollPrev());
+    nextButton.addEventListener("click", () => emblaApi.scrollNext());
+  });
 </script>
