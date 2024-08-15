@@ -28,6 +28,7 @@
     "@types/react-dom": "^18.3.0",
     "aos": "^2.3.4",
     "astro": "^4.13.3",
+    "astro-analytics": "^2.7.0",
     "astro-auto-adapter": "^2.2.0",
     "astro-devtool-breakpoints": "^0.3.0",
     "astro-env": "^0.0.6",

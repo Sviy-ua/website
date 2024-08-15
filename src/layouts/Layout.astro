@@ -12,9 +12,9 @@ import uk from "dayjs/locale/uk.js";
 import { twMerge } from "tailwind-merge";
 import ProgressBar from "astro-vtbot/components/ProgressBar.astro";
 import { Toaster } from "react-hot-toast";
-
+import { GoogleAnalytics } from "astro-analytics";
 import { ViewTransitions } from "astro:transitions";
-import { BASE_URL } from "astro:env/client";
+import { BASE_URL, GTAG_KEY } from "astro:env/client";
 
 interface Props {
   className?: string;
@@ -77,6 +77,9 @@ dayjs.locale(uk);
         url: "https://sviydubno.com.ua/",
       }}
     />
+
+    <!-- Google Analytics -->
+    <GoogleAnalytics id={GTAG_KEY} />
 
     <ViewTransitions />
   </head>

@@ -21,6 +21,7 @@ export default defineConfig({
     env: {
       schema: {
         BASE_URL: envField.string({ context: "client", access: "public" }),
+        GTAG_KEY: envField.string({ context: "client", access: "public" }),
 
         NOTION_API_KEY: envField.string({ context: "server", access: "secret" }),
         NOTION_BUILDING_DATES_DATABASE_ID: envField.string({ context: "server", access: "secret" }),
