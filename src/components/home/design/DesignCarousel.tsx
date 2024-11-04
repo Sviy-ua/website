@@ -32,6 +32,16 @@ export default function DesignCarousel({ item, selected }: IProps) {
             />
           </div>
         ))}
+        <div className="embla__slide h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+          <img
+            src={`/designs/${item.id}/plan.webp`}
+            loading="eager"
+            className="h-full w-full object-cover"
+            alt="gallery"
+            width={1920}
+            height={1080}
+          />
+        </div>
       </div>
       <ArrowLeft
         id="slide-prev"

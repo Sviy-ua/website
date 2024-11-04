@@ -16,7 +16,7 @@ const designs: IDesignCategory[] = [
     id: "1k-55",
     title: "1k-55",
     baseHref: "1k-55",
-    imageCount: 10,
+    imageCount: 9,
   },
   {
     id: "1k-2k",
@@ -34,7 +34,7 @@ const designs: IDesignCategory[] = [
     id: "2k-3k",
     title: "2k-3k",
     baseHref: "2k-3k",
-    imageCount: 10,
+    imageCount: 12,
   },
 ];
 

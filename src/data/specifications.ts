@@ -18,22 +18,22 @@ const specifications: Specification[] = [
   {
     icon: "specification/external-walls",
     title: "СТІНИ ЗОВНІШНІ",
-    description: ["Керамічна цегла"],
+    description: ["Газоблок 300мм"],
   },
   {
     icon: "specification/internal-walls",
     title: "СТІНИ ВНУТРІШНІ",
-    description: ["Газоблок"],
+    description: ["Міжквартирні - газоблок 250мм", "Міжкімнатні - газоблок 100мм"],
   },
   {
     icon: "specification/warming",
-    title: "УТЕПЛЕННЯ",
-    description: ["Мінеральна вата"],
+    title: "УТЕПЛЕННЯ - комбіноване",
+    description: ["Мінвата та пінопласт"],
   },
   {
     icon: "specification/condition",
-    title: "СТАН КВАРТИР",
-    description: ["Вільне планування", "Базовий від забудовника"],
+    title: "СТАН КВАРТИРИ",
+    description: ["Без оздоблення"],
   },
   {
     icon: "specification/height",
@@ -58,7 +58,7 @@ const specifications: Specification[] = [
   {
     icon: "specification/mzk",
     title: "СТАН МЗК",
-    description: ["Дизайнерський ремонт"],
+    description: ["декоративне оздоблення"],
   },
   {
     icon: "specification/parking",
